@@ -4,7 +4,7 @@ export async function get() {
   return rss({
     title: 'Astro Alumno | Blog',
     description: 'Mi viajee de aprendizaje de Astro',
-    site: 'https://aprendizaje-astro-blog.netlify.app/',
+    site: 'https://aprendizaje-astro-blog.netlify.app',
     items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
     customData: '<language>es-es</language>',
   });
