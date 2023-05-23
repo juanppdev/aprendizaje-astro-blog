@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Sobre mi";
+const identity = {
+  fitstName: "Sarah",
+  country: "Canada",
+  occupation: "Escritor Tecnico",
+  hobbies: ["fotografia", "observacion de aves", "penarol"]
+}
+
+const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Redaccion de documentos"];
+
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+const skillColor = "navy";
+---
+
+<Layout pageTitle={pageTitle}>
+  
+    <h2>... !y mi nuevo sitio Astro!</h2>
+    
+    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda pagina de mi siito web, !y es la primera que he construido yo mismo!</p>
+    
+    <p>Este sitio se ira actualizando a medida que vaya completando mas partes del tutorial, !asi que no dejes de visitarlo ppara ver como va mi viaje!</p>
+    
+    <p>He aqui algunos datos sobre mi:</p>
+    <ul>
+      <li>Me llamo {identity.fitstName}.</li>
+      <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+      {identity.hobbies.length >= 2 &&
+        <li>Dos de mis afficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+        }
+    </ul>
+    <p>Mis habilidades son:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    
+    {happy && <p>!Estoy feliz de aprender Astro!</p>}
+    
+    {finished && <p>!He terminado este tutorial!</p>}
+    
+    {goal === 3 ? <p>Mi objetivo es terminar en 3 dias.</p> : <p>Mi objetivos no son 3 dias.</p>}
+    </Layout>

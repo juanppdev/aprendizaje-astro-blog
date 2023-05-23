@@ -1,0 +1,10 @@
+---
+const pageTitle = "Mi sitio Astro";
+import Greeting from '../components/Greeting.jsx';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout pageTitle={pageTitle}>
+  <h2>Mi impresionaante subtitulo del blog</h2>
+  <Greeting client:load messages={['Hej', 'Hallo', "Hola", 'Habari']}/>
+</Layout>

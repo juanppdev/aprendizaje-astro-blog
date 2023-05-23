@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+const allPosts = await getCollection('posts');
+import BlogPost from '../components/BlogPost.astro';
+const pageTitle = "Blog";
+---
+
+<Layout pageTitle={pageTitle}>
+    <p>Aqui es donde voy a postear sobre mi viaje de aprendizaje Astro</p>
+    <ul>
+      {allPosts.map((post) => <BlogPost url={"/posts/" + post.slug}
+      title={post.data.title}/>)}
+    </ul>
+</Layout
